@@ -23,6 +23,8 @@ type apiConfig struct {
 	DB *database.Queries
 }
 
+// Testing Comment
+//
 //go:embed static/*
 var staticFiles embed.FS
 
