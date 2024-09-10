@@ -31,6 +31,8 @@ func (cfg *apiConfig) handlerUsersCreate(w http.ResponseWriter, r *http.Request)
 		return
 	}
 
+	log.Printf("Attempting to create user with ID: %s, Name: %s", uuid.New().String(), params.Name)
+
 	err = cfg.DB.CreateUser(r.Context(), database.CreateUserParams{
 		ID:        uuid.New().String(),
 		CreatedAt: time.Now().UTC().Format(time.RFC3339),
